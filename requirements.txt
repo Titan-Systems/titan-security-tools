@@ -1,0 +1,4 @@
+click
+python-dotenv
+snowflake-connector-python
+tabulate
