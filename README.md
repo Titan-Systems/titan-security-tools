@@ -2,7 +2,7 @@
 
 
 ```
-git clone git@github.com:Titan-Systems/titan-security-tools.git
+git clone https://github.com/Titan-Systems/titan-security-tools.git
 cd titan-security-tools
 python -m venv .venv
 source .venv/bin/activate

@@ -340,7 +340,7 @@ def dump_sessions(sessions, format):
 
 
 def kill_session_by_id(id: int):
-    res = execute(f"SELECT SYSTEM$ABORT_SESSION({id})")[0][0]
+    res = execute(f"SELECT SYSTEM$ABORT_SESSION({id})")[0]
     return res is not None
 
 
