@@ -124,8 +124,8 @@ def connect():
         account=os.environ["SNOWFLAKE_ACCOUNT"],
         user=os.environ["SNOWFLAKE_USER"],
         password=os.environ["SNOWFLAKE_PASSWORD"],
-        role=os.environ["SNOWFLAKE_ROLE"],
-        warehouse=os.environ["SNOWFLAKE_WAREHOUSE"],
+        role=os.environ.get("SNOWFLAKE_ROLE"),
+        warehouse=os.environ.get("SNOWFLAKE_WAREHOUSE"),
     )
 
 
@@ -303,9 +303,9 @@ def print_sessions(sessions, display_limit=None):
         "startTime": time_ago,
         "endTime": time_ago,
         "clientEnvironment": lambda x: (
-            f"*** {json.loads(x)['APPLICATION']}"
+            f"*** {json.loads(x).get('APPLICATION')}"
             if session_client_environment_matches_blocklist(x)
-            else json.loads(x)["APPLICATION"]
+            else json.loads(x).get("APPLICATION"]=)
         ),
         "clientNetAddress": lambda x: f"*** {x}" if x in IP_BLOCKLIST else x,
     }
